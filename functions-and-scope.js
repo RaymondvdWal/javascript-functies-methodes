@@ -14,6 +14,19 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+function cumLaudeGeslaagde() {
+
+let cumlaude = 0;
+for (let i = 0; i < grades.length; i++) {
+    if (i >= 8){
+        cumlaude++;
+
+    }
+}return cumlaude;
+}
+
+console.log(cumLaudeGeslaagde())
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -27,8 +40,7 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-
-
+        //zie hierboven (1a)//
 
 /* Opdracht  2: Gemiddeld cijfer */
 
@@ -40,6 +52,20 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat ik alle waardes uit de array kan langslopen, ook als de array wel 100 entries zou bevatten?
 // Log het antwoord in de terminal.
 
+function meanGrades() {
+
+let count = 0;
+for (let i = 0; i < grades.length; i++) {
+    count = grades.reduce((a, b) => {
+        return a + b;
+    });
+}
+    return count / grades.length
+}
+
+console.log(meanGrades())
+
+
 // ---- Verwachte uitkomst: 6.642857142857143
 
 
@@ -47,6 +73,8 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+
+        //zie hierboven (2a)//
 
 // ---- Verwachte uitkomsten:
 // averageGrade(grades) geeft 6.642857142857143
@@ -58,8 +86,11 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
+function meanGradesRounded() {
+    return Math.round(meanGrades() * 100) / 100
+}
 
-
+console.log(meanGradesRounded())
 
 /* Bonusopdracht: hoogste cijfer */
 
@@ -69,6 +100,13 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Op welke conditie moet ik checken?
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
 // Log het antwoord in de terminal.
+
+function highestGrade() {
+grades.sort(function (a, b){return a - b })
+    return grades[grades.length-1]
+}
+
+console.log(highestGrade())
 
 // ---- Verwachte uitkomst: 9
 
@@ -82,3 +120,5 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+        //zie hierboven(3a)//
